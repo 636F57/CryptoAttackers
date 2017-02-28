@@ -1,3 +1,8 @@
+### ManyTimeAttacker.py 
+### MIT License 
+### Copyright (c) 2017 636F57@GitHub 
+### See more detail at https://github.com/636F57/CryptoAttackers/blob/master/LICENSE 
+
 import binascii
 import sys
 

@@ -1,5 +1,8 @@
 #ManyTimePadAttaker
 
+##[License]
+MIT License. See [here](https://github.com/636F57/CryptoAttackers/blob/master/LICENSE) for detail.
+
 ##[Description]
 This python script helps you find out a key that was used to encrypt many messages by trial-and-error method.
 This is useful when you have multiple ciphertexts which were encrypted with a same long key, and want to find out the key and plaintexts.
