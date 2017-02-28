@@ -15,8 +15,8 @@ To run the program, simply type in console:
 
 The program run interactively. It will ask:  
   
-**Enter the filname which contains ciphertexts:  
-(It assumes ciphertexts are hex-encoded. The file should look like this: ![file example](https://github.com/636F57/resource/blob/master/mtp-example3s.png).
+**Enter the filname which contains ciphertexts:**    
+(It assumes ciphertexts are hex-encoded. The file should look like this:) ![file example](https://github.com/636F57/resource/blob/master/mtp-example3s.png).
 
 **Specify target ciphertext number[(a range of number)] or key[(a number)]:**  
 (Enter integer. The ciphertext with the index of specified number will be used as a ciphertext with known plaintext. If key is specifed, the key is used directly to deciher ciphertexts.)
@@ -28,6 +28,7 @@ Then it will calculate and print the temporary decrypted texts and the key.
 You can continue this routine until you quit.
 
 Belows are screenshots of demo.
+
 ![screenshot1](https://github.com/636F57/resource/blob/master/mtp-example1.png)
 ![screenshot2](https://github.com/636F57/resource/blob/master/mtp-example2.png)
 
