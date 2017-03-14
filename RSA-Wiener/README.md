@@ -5,7 +5,7 @@ MIT License. See [here](https://github.com/636F57/CryptoAttackers/blob/master/LI
 
 ##[Description]
 This python script trys to derive private exponent d from public exponents N and e of RSA public-key protocol, using Wiener's Attack method.
-Note that Wiener's Attack works only when d is smaller than 4th root of N over 3. 
+Note that Wiener's Attack works only when d is smaller than 4th root of N over 3.    
 Reference: https://en.wikipedia.org/wiki/Wiener's_attack 
 
 ##[Dependency]
@@ -17,7 +17,7 @@ To run the program, simply type in console:
 "python WienersAttack.py"
 
 The program will ask you to input N and e., and possible maximum value of x.
-Please input them as base-10 integer.
+Please input them as base-10 integers.
 
 Below is a screenshot of demo.
 
