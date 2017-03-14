@@ -16,7 +16,7 @@ Python3.+
 To run the program, simply type in console:
 "python WienersAttack.py"
 
-The program will ask you to input N and e., and possible maximum value of x.
+The program will ask you to input N and e.
 Please input them as base-10 integers.
 
 Below is a screenshot of demo.
