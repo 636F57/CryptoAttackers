@@ -24,10 +24,6 @@ When factorization succeeds, it outputs p and q as base-10 integers.
 By default, it stores the result in a file, "factor_out.txt". If you do not want to store, 
 set the flag "bFileOut" to False in the source file.  
 
-Below is a screenshot of demo.
-
-![screenshot1](https://github.com/636F57/resource/blob/master/ff-example1.png)
-
 ###[Note]
 This software was made for quick personal use. Not tested much and probably will not be maintained.
 Please feel free to fork/download to modify by yourself if needed.
