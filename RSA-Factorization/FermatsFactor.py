@@ -18,11 +18,14 @@ def fermatsFactorBasic(N):
 	A = NN.sqrt()    
 	A = A.to_integral_value(rounding=ROUND_CEILING)
 	b2 = A * A - NN
-	
+	Amax = Decimal(0.5) * NN + 1
 	try:
 		tmp = b2.sqrt()
 		while tmp != tmp.to_integral_value():
 			A += 1                  # search upward to find A such that A = (p+q)/2
+			if A > Amax:
+				print("Could not factor N.")
+				sys.exit()
 			b2 = A * A - NN
 			tmp = b2.sqrt()
 	except KeyboardInterrupt:
