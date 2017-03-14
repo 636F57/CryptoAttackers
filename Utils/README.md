@@ -13,7 +13,7 @@ so it basically computes in about sqrt of time compared to the case of simple ex
 
 Python3.+
 
-[gmpy2](https://pypi.python.org/pypi/gmpy2) package.
+[gmpy2](https://pypi.python.org/pypi/gmpy2) package for high-precision caculation.  
 You can install by "pip install gmpy2".
 
 ##[Usage]
@@ -21,7 +21,7 @@ To run the program, simply type in console:
 "python DiscreteLog.py"
 
 The program will ask you to input g, h, p, and possible maximum value of x.
-Please input them as 10-base integer.
+Please input them as base-10 integer.
   
 
 It will first make the table of [(g\*\*sqrt(max) )\*\*x0 in mod p], then compute [h/(g\*\*x1)] and try to
