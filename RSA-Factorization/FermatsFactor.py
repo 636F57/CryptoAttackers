@@ -19,11 +19,15 @@ def fermatsFactorBasic(N):
 	A = A.to_integral_value(rounding=ROUND_CEILING)
 	b2 = A * A - NN
 	
-	tmp = b2.sqrt()
-	while tmp != tmp.to_integral_value():
-		A += 1                  # search upward to find A such that A = (p+q)/2
-		b2 = A * A - NN
+	try:
 		tmp = b2.sqrt()
+		while tmp != tmp.to_integral_value():
+			A += 1                  # search upward to find A such that A = (p+q)/2
+			b2 = A * A - NN
+			tmp = b2.sqrt()
+	except KeyboardInterrupt:
+		print("Interrupted. A=",A)
+		sys.exit()
 		
 	p = A + tmp                 # tmp = abs((p-q)/2)
 	q = A - tmp
