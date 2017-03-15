@@ -15,9 +15,7 @@ Caluclate discrete log using meet-in-middle attack method.
 See [details](https://github.com/636F57/CryptoAttackers/blob/master/Utils/README-DiscreteLog.md)
 
 ##[RSAdecrypt]
-Decrypt hex-coded RSA ciphertext from RSA components of N, e, d.   
-Additional dependency: [pycrypt](https://pypi.python.org/pypi/pycrypto) package. Install by "pip install pycrypto".
-
+Decrypt hex-coded RSA ciphertext from RSA modulus and components of N, e, d.   
 
 
 ###[Note]
