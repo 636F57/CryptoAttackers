@@ -12,7 +12,6 @@
 
 import gmpy2
 from gmpy2 import mpz  # multiple precision integers module
-import sys
 import pickle
 import hashlib
 import math
@@ -26,22 +25,18 @@ def createTable(g, p, B):
 	gB = (mpz(g)** mpz(B)) % pp  
 	key = mpz(1)
 	progressbase = int(B/10)
-	for x0 in range(B+1):  # create table of [(g**B)^x0] mod p
+	for x0 in range(B+1):  # create table of [(g**B)**x0] mod p
 		table[key] = x0
 		key = ( key * gB ) % pp
-		if x0 % progressbase == 0:
+		if x0 % progressbase == 0 or x0 > 8410484 :
 			print( x0*10 // progressbase, "% done.")
+			print( key, gB, x0, B)
 	return table
 
+# return None when no x found.
+def getDiscreteLog(g, h, p, x_max):
 
-
-if __name__ == "__main__":
-
-	g = mpz(input("Enter g:"))
-	h = mpz(input("Enter h:"))
-	p = mpz(input("Enter p:"))
-	max = int(input("Enter max of 0 <= x <= max:"))
-	B = int(math.sqrt(max)) + 1
+	B = int(math.sqrt(x_max)) + 1
 	
 	# create table file name
 	m = hashlib.sha1()
@@ -68,8 +63,7 @@ if __name__ == "__main__":
 			
 	if len(table) == 0:
 		print("No table data.")
-		sys.exit()
-		
+		return None
 		
 	x0 = -1
 	x1 = -1
@@ -87,10 +81,23 @@ if __name__ == "__main__":
 			if x0 > -1:
 				x = x0 * B + x1
 				print("Found. x0 =",x0, ", x1 =", x1, ", x =", x)
-				sys.exit()
+				return x
 		gg_tmp = ( gg_tmp * gg ) % p
 		if x1 % progressbase == 0:
 			print( x1*10 // progressbase, "% done.")
 	else:
 		print("No x found.")
-		
+	
+	return None
+
+if __name__ == "__main__":
+
+	g = mpz(input("Enter g:"))
+	h = mpz(input("Enter h:"))
+	p = mpz(input("Enter p:"))
+	x_max = int(input("Enter max of 0 <= x <= max:"))
+	
+	getDiscreteLog(g, h, p, x_max)
+	
+	print("done")
+	
