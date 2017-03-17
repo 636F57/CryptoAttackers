@@ -28,9 +28,8 @@ def createTable(g, p, B):
 	for x0 in range(B+1):  # create table of [(g**B)**x0] mod p
 		table[key] = x0
 		key = ( key * gB ) % pp
-		if x0 % progressbase == 0 or x0 > 8410484 :
+		if x0 % progressbase == 0:
 			print( x0*10 // progressbase, "% done.")
-			print( key, gB, x0, B)
 	return table
 
 # return None when no x found.
