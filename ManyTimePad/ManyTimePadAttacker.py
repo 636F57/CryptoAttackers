@@ -7,7 +7,7 @@ import binascii
 import sys
 
 def isPrintable(x):
-	if x < 0x20 or x > 0x79:
+	if x < 0x20 or x > 0x7F:
 		return False
 	else:
 		return True
